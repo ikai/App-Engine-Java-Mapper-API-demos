@@ -6,11 +6,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
-		<servlet-name>Mapper</servlet-name>
-		<servlet-class>com.ikai.mapperdemo.servlets.MapperServlet</servlet-class>
-	</servlet>
-
-	<servlet>
 		<servlet-name>AddComment</servlet-name>
 		<servlet-class>com.ikai.mapperdemo.servlets.AddCommentServlet</servlet-class>
 	</servlet>
@@ -25,11 +20,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	  <servlet-class>com.google.appengine.tools.mapreduce.MapReduceServlet</servlet-class>
 	</servlet>
 	
-	<servlet-mapping>
-		<servlet-name>Mapper</servlet-name>
-		<url-pattern>/mapper</url-pattern>
-	</servlet-mapping>
-
 	<servlet-mapping>
 		<servlet-name>AddComment</servlet-name>
 		<url-pattern>/add</url-pattern>

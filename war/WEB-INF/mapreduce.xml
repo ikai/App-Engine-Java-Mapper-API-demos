@@ -15,7 +15,7 @@
     
     <property>
       <name human="Entity Kind to Map Over">mapreduce.mapper.inputformat.datastoreinputformat.entitykind</name>
-      <value template="optional">PBFVotes</value>
+      <value template="optional">Comment</value>
     </property>
   </configuration>
 </configurations>

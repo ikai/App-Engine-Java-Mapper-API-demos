@@ -22,6 +22,6 @@ public class DeleteAllMapper extends
 		log.info("Adding key to deletion pool: " + key);
 		DatastoreMutationPool mutationPool = this.getAppEngineContext(context)
 				.getMutationPool();
-		mutationPool.put(value);
+		mutationPool.delete(value.getKey());
 	}
 }

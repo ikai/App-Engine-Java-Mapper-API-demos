@@ -7,8 +7,18 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>Mapper</servlet-name>
-		<servlet-class>com.ikai.mapperdemo.MapperServlet</servlet-class>
+		<servlet-class>com.ikai.mapperdemo.servlets.MapperServlet</servlet-class>
 	</servlet>
+
+	<servlet>
+		<servlet-name>AddComment</servlet-name>
+		<servlet-class>com.ikai.mapperdemo.servlets.AddCommentServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ViewComments</servlet-name>
+ 		<servlet-class>com.ikai.mapperdemo.servlets.ViewCommentsServlet</servlet-class>
+	</servlet>	
 	
 	<servlet>
 	  <servlet-name>mapreduce</servlet-name>
@@ -19,6 +29,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Mapper</servlet-name>
 		<url-pattern>/mapper</url-pattern>
 	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddComment</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ViewComments</servlet-name>
+		<url-pattern>/view</url-pattern>
+	</servlet-mapping>	
 
 	<servlet-mapping>
 	  <servlet-name>mapreduce</servlet-name>

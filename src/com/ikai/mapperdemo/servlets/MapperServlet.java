@@ -1,4 +1,4 @@
-package com.ikai.mapperdemo;
+package com.ikai.mapperdemo.servlets;
 
 import java.io.IOException;
 import javax.servlet.http.*;

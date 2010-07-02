@@ -13,7 +13,12 @@
   </head>
 
   <body>
-    <h1>Hello App Engine!</h1>
+    <h1>App Engine Mapper demo</h1>
+	
+	<form action="/add" method="POST">
+		Add a comment: <input type="text" name="comment" />
+		<input type="submit" />
+	</form>
 	
     <table>
       <tr>
@@ -21,6 +26,10 @@
       </tr>
       <tr>
         <td><a href="/mapper">Mapper_demo</a></td>
+      </tr>
+      
+      <tr>
+      	<td><a href="/view">View Comments</a></td>
       </tr>
       
       <tr>

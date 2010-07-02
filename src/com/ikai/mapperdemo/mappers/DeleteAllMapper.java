@@ -1,17 +1,22 @@
 package com.ikai.mapperdemo.mappers;
 
-import java.util.Date;
 import java.util.logging.Logger;
 
 import org.apache.hadoop.io.NullWritable;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.tools.mapreduce.AppEngineMapper;
 import com.google.appengine.tools.mapreduce.DatastoreMutationPool;
 
+/**
+ * 
+ * This Mapper deletes all Entities of a given kind. It simulates the
+ * DROP TABLE functionality asked for by developers.
+ * 
+ * @author Ikai Lan
+ *
+ */
 public class DeleteAllMapper extends
 		AppEngineMapper<Key, Entity, NullWritable, NullWritable> {
 	private static final Logger log = Logger.getLogger(DeleteAllMapper.class

@@ -25,8 +25,8 @@ public class NaiveToLowercaseMapper extends
 
 	@Override
 	public void map(Key key, Entity value, Context context) {
-		log.warning("Mapping key: " + key);
-
+		log.info("Mapping key: " + key);
+		
 		if (value.hasProperty("comment")) {
 			String comment = (String) value.getProperty("comment");
 			comment = comment.toLowerCase();

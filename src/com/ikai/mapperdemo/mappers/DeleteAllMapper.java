@@ -12,24 +12,16 @@ import com.google.appengine.api.datastore.Key;
 import com.google.appengine.tools.mapreduce.AppEngineMapper;
 import com.google.appengine.tools.mapreduce.DatastoreMutationPool;
 
-public class PooledToLowercaseMapper extends
+public class DeleteAllMapper extends
 		AppEngineMapper<Key, Entity, NullWritable, NullWritable> {
-	private static final Logger log = Logger
-			.getLogger(PooledToLowercaseMapper.class.getName());
+	private static final Logger log = Logger.getLogger(DeleteAllMapper.class
+			.getName());
 
 	@Override
 	public void map(Key key, Entity value, Context context) {
-		log.info("Mapping key: " + key);
-
-		if (value.hasProperty("comment")) {
-			String comment = (String) value.getProperty("comment");
-			comment = comment.toLowerCase();
-			value.setProperty("comment", comment);
-			value.setProperty("updatedAt", new Date());
-
-			DatastoreMutationPool mutationPool = this.getAppEngineContext(
-					context).getMutationPool();
-			mutationPool.put(value);
-		}
+		log.info("Adding key to deletion pool: " + key);
+		DatastoreMutationPool mutationPool = this.getAppEngineContext(context)
+				.getMutationPool();
+		mutationPool.put(value);
 	}
 }

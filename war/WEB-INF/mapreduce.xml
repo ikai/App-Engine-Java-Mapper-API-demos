@@ -1,5 +1,5 @@
 <configurations>
-  <configuration name="Demo Mapper">
+  <configuration name="Naive Mass toLowercase()">
     <property>
       <name>mapreduce.map.class</name>
       
@@ -19,12 +19,12 @@
     </property>
   </configuration>
   
-  <configuration name="Demo Mapper">
+  <configuration name="Mass toLowercase() with Mutation Pool">
     <property>
       <name>mapreduce.map.class</name>
       
       <!--  Set this to be your Mapper class  -->
-      <value>com.ikai.mapperdemo.mappers.PooledLowercaseMapper</value>
+      <value>com.ikai.mapperdemo.mappers.PooledToLowercaseMapper</value>
     </property>
     
     <!--  This is a default tool that lets us iterate over datastore entities -->
@@ -40,6 +40,22 @@
     
   </configuration>
   
+  
+  <configuration name="Delete all Entities">
+    <property>
+      <name>mapreduce.map.class</name>
+      
+      <!--  Set this to be your Mapper class  -->
+      <value>com.ikai.mapperdemo.mappers.DeleteAllMapper</value>
+    </property>
+    
+    <!--  This is a default tool that lets us iterate over datastore entities -->
+    <property>
+      <name>mapreduce.inputformat.class</name>
+      <value>com.google.appengine.tools.mapreduce.DatastoreInputFormat</value>
+    </property>
+        
+  </configuration>  
     
   
 </configurations>

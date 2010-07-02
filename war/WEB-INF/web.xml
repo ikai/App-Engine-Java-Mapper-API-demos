@@ -4,15 +4,30 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
 	<servlet>
-		<servlet-name>Mapper_demo</servlet-name>
-		<servlet-class>com.ikai.mapperdemo.Mapper_demoServlet</servlet-class>
+		<servlet-name>Mapper</servlet-name>
+		<servlet-class>com.ikai.mapperdemo.MapperServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+	  <servlet-name>mapreduce</servlet-name>
+	  <servlet-class>com.google.appengine.tools.mapreduce.MapReduceServlet</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
-		<servlet-name>Mapper_demo</servlet-name>
-		<url-pattern>/mapper_demo</url-pattern>
+		<servlet-name>Mapper</servlet-name>
+		<url-pattern>/mapper</url-pattern>
 	</servlet-mapping>
+
+	<servlet-mapping>
+	  <servlet-name>mapreduce</servlet-name>
+	  <url-pattern>/mapreduce/*</url-pattern>
+	</servlet-mapping>
+
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
+	
 </web-app>

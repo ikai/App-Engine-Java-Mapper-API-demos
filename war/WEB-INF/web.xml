@@ -20,6 +20,11 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	  <servlet-class>com.google.appengine.tools.mapreduce.MapReduceServlet</servlet-class>
 	</servlet>
 	
+	<servlet>
+	  <servlet-name>WordCountCompletedCallback</servlet-name>
+	  <servlet-class>com.ikai.mapperdemo.servlets.WordCountCompletedCallbackServlet</servlet-class>
+	</servlet>	
+	
 	<servlet-mapping>
 		<servlet-name>AddComment</servlet-name>
 		<url-pattern>/add</url-pattern>
@@ -29,6 +34,12 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>ViewComments</servlet-name>
 		<url-pattern>/view</url-pattern>
 	</servlet-mapping>	
+
+	<servlet-mapping>
+		<servlet-name>WordCountCompletedCallback</servlet-name>
+		<url-pattern>/callbacks/word_count_completed</url-pattern>
+	</servlet-mapping>	
+
 
 	<servlet-mapping>
 	  <servlet-name>mapreduce</servlet-name>

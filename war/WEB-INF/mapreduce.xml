@@ -59,6 +59,33 @@
       <name human="Entity Kind to Map Over">mapreduce.mapper.inputformat.datastoreinputformat.entitykind</name>
       <value template="optional">Comment</value>      
     </property>    
+  </configuration>  
+    
+    
+  <configuration name="Count words in all Comments">
+    <property>
+      <name>mapreduce.map.class</name>
+      
+      <!--  Set this to be your Mapper class  -->
+      <value>com.ikai.mapperdemo.mappers.CountWordsMapper</value>
+    </property>
+    
+    <property>
+    	<!--  This is the URL to call after the entire Mapper has run -->
+    	<name>mapreduce.appengine.donecallback.url</name>
+    	<value>/callbacks/word_count_completed</value>
+    </property>
+    
+    <!--  This is a default tool that lets us iterate over datastore entities -->
+    <property>
+      <name>mapreduce.inputformat.class</name>
+      <value>com.google.appengine.tools.mapreduce.DatastoreInputFormat</value>
+    </property>
+    
+    <property>
+      <name human="Entity Kind to Map Over">mapreduce.mapper.inputformat.datastoreinputformat.entitykind</name>
+      <value template="optional">Comment</value>      
+    </property>        
         
   </configuration>  
     

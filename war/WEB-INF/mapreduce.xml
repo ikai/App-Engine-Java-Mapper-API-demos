@@ -89,5 +89,32 @@
         
   </configuration>  
     
+  <configuration name="Count substring matches in all Comments">
+    <property>
+      <name>mapreduce.map.class</name>
+      
+      <!--  Set this to be your Mapper class  -->
+      <value>com.ikai.mapperdemo.mappers.SubstringMatcherMapper</value>
+    </property>
+        
+    <!--  This is a default tool that lets us iterate over datastore entities -->
+    <property>
+      <name>mapreduce.inputformat.class</name>
+      <value>com.google.appengine.tools.mapreduce.DatastoreInputFormat</value>
+    </property>
+    
+    <property>
+      <name human="Entity Kind to Map Over">mapreduce.mapper.inputformat.datastoreinputformat.entitykind</name>
+      <value template="optional">Comment</value>      
+    </property>        
+    
+    <property>
+      <name human="Search for substring">mapreduce.mapper.counter.substringtarget</name>
+      <value template="optional">Substring</value>      
+    </property>        
+    
+        
+  </configuration>  
+
   
 </configurations>

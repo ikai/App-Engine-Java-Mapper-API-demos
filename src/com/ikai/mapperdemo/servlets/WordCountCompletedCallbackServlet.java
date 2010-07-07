@@ -67,9 +67,9 @@ public class WordCountCompletedCallbackServlet extends HttpServlet {
 			Entity totalCountEntity = new Entity("TotalWordCount",
 					"total_word_count");
 			totalCountEntity.setProperty("count", wordCount);
-			
+
 			// Now we timestamp this bad boy
-			totalCountEntity.setProperty("updatedAt", new Date()); 
+			totalCountEntity.setProperty("updatedAt", new Date());
 			datastore.put(totalCountEntity);
 
 		} catch (EntityNotFoundException e) {

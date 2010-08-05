@@ -1,54 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://java.sun.com/xml/ns/javaee"
-xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
 
 	<servlet>
 		<servlet-name>AddComment</servlet-name>
 		<servlet-class>com.ikai.mapperdemo.servlets.AddCommentServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>ViewComments</servlet-name>
- 		<servlet-class>com.ikai.mapperdemo.servlets.ViewCommentsServlet</servlet-class>
-	</servlet>	
-	
-	<servlet>
-	  <servlet-name>mapreduce</servlet-name>
-	  <servlet-class>com.google.appengine.tools.mapreduce.MapReduceServlet</servlet-class>
+		<servlet-class>com.ikai.mapperdemo.servlets.ViewCommentsServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
-	  <servlet-name>WordCountCompletedCallback</servlet-name>
-	  <servlet-class>com.ikai.mapperdemo.servlets.WordCountCompletedCallbackServlet</servlet-class>
-	</servlet>	
-	
+		<servlet-name>mapreduce</servlet-name>
+		<servlet-class>com.google.appengine.tools.mapreduce.MapReduceServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>com.ikai.mapperdemo.servlets.UploadBlobServlet</servlet-class>
+	</servlet>
+
+    <servlet>
+        <servlet-name>SuccessfulUpload</servlet-name>
+        <servlet-class>com.ikai.mapperdemo.servlets.SuccessfulUploadServlet</servlet-class>
+    </servlet>
+
+
+	<servlet>
+		<servlet-name>Serve</servlet-name>
+		<servlet-class>com.ikai.mapperdemo.servlets.ServeBlobServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SuccessfulUpload</servlet-name>
+        <url-pattern>/upload-success</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>Serve</servlet-name>
+		<url-pattern>/serve</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>WordCountCompletedCallback</servlet-name>
+		<servlet-class>com.ikai.mapperdemo.servlets.WordCountCompletedCallbackServlet</servlet-class>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>AddComment</servlet-name>
 		<url-pattern>/add</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>ViewComments</servlet-name>
 		<url-pattern>/view</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>WordCountCompletedCallback</servlet-name>
 		<url-pattern>/callbacks/word_count_completed</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
 
 
 	<servlet-mapping>
-	  <servlet-name>mapreduce</servlet-name>
-	  <url-pattern>/mapreduce/*</url-pattern>
+		<servlet-name>mapreduce</servlet-name>
+		<url-pattern>/mapreduce/*</url-pattern>
 	</servlet-mapping>
 
-	
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	
+
 </web-app>

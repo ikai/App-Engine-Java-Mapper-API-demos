@@ -132,13 +132,13 @@
     </property>
     
     <property>
-      <name human="Entity Kind to Map Over">mapreduce.mapper.inputformat.datastoreinputformat.entitykind</name>
-      <value template="optional">Comment</value>      
+      <name human="Blob Keys to Map Over">mapreduce.mapper.inputformat.blobstoreinputformat.blobkeys</name>
+      <value template="optional">blobkeyhere</value>      
     </property>        
     
     <property>
-      <name human="Search for substring">mapreduce.mapper.counter.substringtarget</name>
-      <value template="optional">Substring</value>      
+      <name human="Number of shards to use">mapreduce.mapper.shardcount</name>
+      <value template="optional">10</value>      
     </property>        
     
         

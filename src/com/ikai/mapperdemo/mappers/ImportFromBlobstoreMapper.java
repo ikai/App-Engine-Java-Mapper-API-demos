@@ -11,7 +11,10 @@ import com.google.appengine.tools.mapreduce.DatastoreMutationPool;
 
 /**
  * 
- * This Mapper imports from a CSV file in the Blobstore.
+ * This Mapper imports from a CSV file in the Blobstore. The CSV
+ * assumes it's in the MaxMind format for cities, states, zipcodes
+ * and lat/long.
+ * 
  * 
  * @author Ikai Lan
  *
@@ -34,7 +37,6 @@ public class ImportFromBlobstoreMapper extends
 		// We're also assuming no errant commas in this simple example
 		
 		String[] values = line.split(",");
-		String id = values[0];
 		String state = values[2];
 		String cityName = values[3];		
 		String zipcode = values[4];

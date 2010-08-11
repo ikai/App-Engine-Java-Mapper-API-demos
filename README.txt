@@ -1,4 +1,4 @@
-Demonstrates a bunch of useful Mappers.
+Demonstrates a bunch of useful Mappers for use with the App Engine Mapreduce library
 
 The Mapper library can be found here:
 
@@ -12,5 +12,12 @@ library. Code samples include:
 - Deleting all Entities of a given Kind
 - Counting all the words across all Entities, then using a callback URL to save them
 - Taking an input in the Mapper interface
+- Importing data from a CSV file into the datastore
 
-More examples will come soon as well as a detailed blog post.
+The introductory blog post to the Mapper API can be found here:
+
+http://ikaisays.com/2010/07/09/using-the-java-mapper-framework-for-app-engine/
+
+A follow up post about reading input from the Blobstore can be found here:
+
+http://ikaisays.com/2010/07/09/using-the-java-mapper-framework-for-app-engine/

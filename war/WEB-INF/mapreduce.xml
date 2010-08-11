@@ -125,7 +125,7 @@
       <value>com.ikai.mapperdemo.mappers.ImportFromBlobstoreMapper</value>
     </property>
         
-    <!--  This is a default tool that lets us iterate over datastore entities -->
+    <!--  This is a default tool that lets us iterate over blobstore data -->
     <property>
       <name>mapreduce.inputformat.class</name>
       <value>com.google.appengine.tools.mapreduce.BlobstoreInputFormat</value>
